@@ -70,3 +70,11 @@ functions:
           method: PUT
           cors: true
           authorizer: aws_iam
+  delete:
+    handler: delete.main
+    events:
+      - http:
+          path: notes/{id}
+          method: DELETE
+          cors: true
+          authorizer: aws_iam
