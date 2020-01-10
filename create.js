@@ -28,7 +28,7 @@ export function main(event, context, callback) {
                 statusCode: 500,
                 headers: headers,
                 body: JSON.stringify({ status: false })
-            }
+            };
             callback(null, response);
             return;
         }
@@ -38,6 +38,6 @@ export function main(event, context, callback) {
             headers: headers,
             body: JSON.stringify(params.Item)
         };
-        callback(null, response)
+        callback(null, response);
     });
 }
