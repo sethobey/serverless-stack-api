@@ -7,12 +7,11 @@ export async function main(event, context) {
         // 'Key' defines the partition key and sort key of the item to be retrieved
         // - 'userId': Identity Pool identity id of the authenticated user
         // - 'noteId': path parameter
-        KeyConditionalExpression: "userId = :userId",
+        KeyConditionExpression: "userId = :userId",
         ExpressionAttributeValues: {
             ":userId": event.requestContext.identity.cognitoIdentityId
         }
-    }
-    
+    };
     try {
         const result = await dynamoDbLib.call("query", params);
         // Return the matching list of items in response body
