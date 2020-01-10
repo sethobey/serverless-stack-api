@@ -87,3 +87,6 @@ functions:
           method: POST
           cors: true
           authorizer: aws_iam
+
+resources:
+  - ${file(resources/api-gateway-errors.yml)}
